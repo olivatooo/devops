@@ -201,8 +201,15 @@ Se voc chegou até aqui com sucesso, o seu ambiente está pronto para a continui
 
 * No terminal, instale os pacotes `docker` e `docker-compose` com `sudo pacman -S docker docker-compose`
 * Rode o comando `sudo usermod -aG docker $USER` para adicionar o usuário atual ao grupo do docker e então poder rodar o comando sem ser root;
-* Feche o terminal e abra de novo \(talvez seja necessário reiniciar o computador para finalizar a instalação e ativar o daemon do docker\);
-* Rode o comando `docker run hello-world` para confirmar que a instalação aconteceu corretamente.
+* Inicie o serviço do docker com `sudo systemctl start docker`
+* Caso queira que o docker iniciei junto com o sistema: `sudo systemctl enable docker`
+* Rode o comando `docker info` para confirmar que a instalação aconteceu corretamente.
 
 ![Instala&#xE7;&#xE3;o no Linux](https://i.imgur.com/OQR8ByS.jpg)
+
+#### podman
+Caso não queria poluir seu root filesystem você pode substituir `docker` por `podman`, todos os comandos são compatíveis. Não é necessário um daemon executando para a execução dos containeres.
+Você pode instalar no arch com `yay -S podman podman-compose`
+
+
 
